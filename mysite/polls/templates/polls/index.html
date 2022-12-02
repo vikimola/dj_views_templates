@@ -1,0 +1,32 @@
+{% load static %}
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questions list</title>
+</head>
+<body style="background-color:coral;">
+<p>index</p>
+{% if latest_question_list %}
+<h2>Latest questions:</h2>
+<ul>
+    {% for q in latest_question_list %}
+    {% comment %}
+    <!--    <li><a href="/polls/{{q.id}}"> {{q.question_text}}</a></li>-->
+    <!--    <li>{{q.question_text}} </li>-->
+    <!--     hardcoded, tightly-coupled approach: -->
+    <!--            <li><a href="/polls/{{q.id}}"> {{q.question_text}}</a></li>-->
+    <!--    More refined:-->
+    <!--    <li><a href="{% url 'detail' q.id %}"> {{q.question_text}}</a></li>-->
+    <!--    Even better: -->
+    <!--    <li><a href="{% url 'polls:detail' q.id %}"> {{q.question_text}}</a></li>-->
+    {% endcomment %}
+    <li><a href="{% url 'polls:detail' q.id %}">{{ q.question_text }}</a></li>
+    {% endfor %}
+</ul>
+<!--{% else %}-->
+<!--<p>No questions available.</p>-->
+{% endif %}
+
+</body>
+</html>

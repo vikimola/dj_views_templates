@@ -1,0 +1,8 @@
+"Hello World"
+
+<!--     hardcoded, tightly-coupled approach: -->
+    <!--            <li><a href="/polls/{{q.id}}"> {{q.question_text}}</a></li>-->
+    <!--    More refined:-->
+    <!--    <li><a href="{% url 'detail' q.id %}"> {{q.question_text}}</a></li>-->
+    <!--    Even better: -->
+    <!--    <li><a href="{% url 'polls:detail' q.id %}"> {{q.question_text}}</a></li>-->
